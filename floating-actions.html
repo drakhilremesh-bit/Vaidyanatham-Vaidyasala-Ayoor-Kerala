@@ -1,0 +1,7 @@
+<div class="floatingActions" aria-label="Quick actions">
+  <button class="floatingBook va-ripple" type="button" onclick="openConsult()" aria-label="Book consultation" title="Book consultation">🩺</button>
+  <button class="floatingExplore va-ripple" type="button" onclick="openExploreWellness()" aria-label="Explore wellness products" title="Explore wellness products">🌿</button>
+  <a class="floatingWhatsApp va-ripple" href="https://wa.me/918921669537?text=Hello%20Vaidynatham%2C%20I%20would%20like%20to%20know%20more%20about%20a%20consultation." rel="noopener" target="_blank" aria-label="WhatsApp" title="WhatsApp"><span aria-hidden="true">✆</span></a>
+  <button class="cart va-ripple" id="cartButton" onclick="showCart()" type="button" aria-label="Open cart" title="Cart">🛒<b id="count">0</b></button>
+</div>
+<div class="modal" id="modal"><div class="modalBox"><button class="close" onclick="closeModal()">×</button><h2 style="font-family:Georgia;color:#123B73">Your cart</h2><div id="cartItems"></div><button class="btn accent" onclick="checkoutCart()" style="width:100%;margin-top:15px">Proceed via WhatsApp</button></div></div>

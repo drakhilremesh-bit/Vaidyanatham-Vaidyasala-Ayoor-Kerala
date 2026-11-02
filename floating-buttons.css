@@ -1,0 +1,180 @@
+/* Extracted feature stylesheet. Main site loads css/main.css for the exact original cascade. */
+/* Premium responsive quick actions: one clean floating cluster */
+.floatingActions{position:fixed;right:22px;bottom:22px;z-index:2100;display:flex;align-items:center;gap:8px;padding:6px;border-radius:999px;background:rgba(255,255,255,.88);border:1px solid rgba(201,164,92,.32);box-shadow:0 16px 42px rgba(18,59,115,.18);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.floatingActions .floatingBook,.floatingActions .cart{position:relative;inset:auto;display:inline-flex;align-items:center;justify-content:center;gap:6px;height:46px;min-width:46px;padding:0 15px;border:0;border-radius:999px;color:#fff;font:800 13px Inter,Arial,sans-serif;cursor:pointer;white-space:nowrap;box-shadow:none}
+.floatingActions .floatingBook{background:var(--blue)}
+.floatingActions .cart{background:var(--red)}
+.floatingActions .cart b{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;padding:0 5px;border-radius:99px;background:#fff;color:var(--red);font-size:11px}
+.floatingActions button:hover{transform:translateY(-2px);filter:saturate(1.05)}
+.floatingActions button:focus-visible{outline:3px solid rgba(201,164,92,.55);outline-offset:3px}
+.wa{left:22px;bottom:22px;z-index:2050;opacity:.92}
+
+
+@media (max-width:1100px){
+  .floatingActions{right:18px;bottom:18px}
+  .wa{left:18px;bottom:18px}
+  
+  .heroPortraitCard{max-width:330px}
+}
+@media (max-width:700px){
+  .floatingActions{right:12px;bottom:12px;gap:6px;padding:5px}
+  .floatingActions .floatingBook,.floatingActions .cart{height:42px;padding:0 12px;font-size:12px}
+  .floatingActions .floatingBook span,.floatingActions .cart span{display:none}
+  .floatingActions .floatingBook,.floatingActions .cart{width:44px;min-width:44px;padding:0}
+  .floatingActions .cart b{position:absolute;right:-2px;top:-5px;min-width:18px;height:18px;padding:0 4px;font-size:10px}
+  .wa{left:12px;bottom:12px;padding:10px 12px;font-size:12px}
+  
+  
+}
+@media (max-width:420px){
+  .wa{display:none}
+  .floatingActions{right:10px;bottom:10px}
+  
+}
+@media (min-width:1400px){
+  .floatingActions{right:28px;bottom:28px}
+}
+@media (prefers-reduced-motion:reduce){
+  .floatingActions button{transition:none!important}
+}
+
+/* Four uncluttered floating actions: Book → Cart → WhatsApp → Wellness */
+.floatingActions{position:fixed!important;right:max(14px,env(safe-area-inset-right))!important;bottom:max(14px,env(safe-area-inset-bottom))!important;z-index:9998!important;display:flex!important;flex-direction:column!important;align-items:center!important;gap:9px!important;padding:0!important;margin:0!important;background:transparent!important;border:0!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.floatingActions button,.floatingActions a{box-sizing:border-box!important;width:50px!important;height:50px!important;min-width:50px!important;min-height:50px!important;padding:0!important;margin:0!important;border:0!important;border-radius:50%!important;display:grid!important;place-items:center!important;text-decoration:none!important;font:700 21px/1 Arial,sans-serif!important;box-shadow:0 10px 26px rgba(0,0,0,.20)!important;cursor:pointer!important;position:relative!important;transition:transform .22s ease,box-shadow .22s ease!important}
+.floatingActions .floatingBook{background:var(--blue)!important;color:#fff!important}
+.floatingActions .cart{background:var(--red)!important;color:#fff!important}
+.floatingActions .floatingWhatsApp{background:#20b85a!important;color:#fff!important;font-size:25px!important}
+.floatingActions .floatingExplore{background:#c9a45c!important;color:#102f57!important;font-size:22px!important}
+.floatingActions button:hover,.floatingActions a:hover{transform:translateY(-3px) scale(1.04)!important;box-shadow:0 14px 30px rgba(0,0,0,.24)!important}
+.floatingActions button:focus-visible,.floatingActions a:focus-visible{outline:3px solid rgba(255,255,255,.95)!important;outline-offset:3px!important}
+.floatingActions .cart b{position:absolute!important;right:-3px!important;top:-3px!important;min-width:19px!important;height:19px!important;padding:0 4px!important;border-radius:50%!important;display:grid!important;place-items:center!important;background:#fff!important;color:var(--red)!important;font:800 10px/1 Arial,sans-serif!important;border:1px solid rgba(141,31,45,.12)!important}
+.chatBubble,.chatBox,.wa{display:none!important}
+@media(max-width:600px){.floatingActions{right:max(10px,env(safe-area-inset-right))!important;bottom:max(10px,env(safe-area-inset-bottom))!important;gap:8px!important}.floatingActions button,.floatingActions a{width:46px!important;height:46px!important;min-width:46px!important;min-height:46px!important;font-size:19px!important}.floatingActions .floatingWhatsApp{font-size:23px!important}.floatingActions .floatingExplore{font-size:20px!important}.floatingActions .cart b{min-width:18px!important;height:18px!important;font-size:9px!important}}
+@media(max-height:520px) and (orientation:landscape){.floatingActions{gap:5px!important;bottom:8px!important}.floatingActions button,.floatingActions a{width:40px!important;height:40px!important;min-width:40px!important;min-height:40px!important;font-size:17px!important}}
+@media(prefers-reduced-motion:reduce){.floatingActions button,.floatingActions a{transition:none!important}}
+
+button[onclick="openConsult()"]::before,
+button[onclick="submitConsult()"]::before{
+  content:"›";
+  font-size:.72em;
+  opacity:.82;
+  margin-right:7px;
+}
+button[onclick="openExploreWellness()"]::before,
+button[onclick*="addCart("]::before,
+button[onclick*="enquirePackage("]::before,
+button[onclick="checkoutCart()"]::before{
+  content:"›";
+  font-size:.76em;
+  opacity:.82;
+  margin-right:7px;
+}
+button#cartButton::before{
+  content:"";
+  margin:0;
+}
+
+.vmq-gift-product{
+  position:fixed;
+  right:18px;
+  bottom:210px;
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#1d4d86;
+  color:#fff;
+  border:2px solid rgba(255,255,255,.95);
+  box-shadow:0 7px 20px rgba(20,50,90,.25);
+  text-decoration:none;
+  font-size:27px;
+  line-height:1;
+  z-index:1185;
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.vmq-gift-product:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 24px rgba(20,50,90,.3);
+}
+@media(max-width:760px){
+  .vmq-gift-product{
+    right:14px;
+    bottom:208px;
+    width:54px;
+    height:54px;
+    font-size:25px;
+  }
+}
+
+.vmq-gift-product{
+  right:18px !important;
+  bottom:126px !important;
+  width:54px !important;
+  height:54px !important;
+  padding:0 !important;
+  border-radius:50% !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  background:linear-gradient(145deg,#fffdf7,#ead7a2) !important;
+  color:#8b6b22 !important;
+  border:2px solid rgba(255,255,255,.98) !important;
+  box-shadow:0 5px 16px rgba(78,55,15,.22), inset 0 0 0 1px rgba(151,116,42,.18) !important;
+  font-family:Georgia,"Times New Roman",serif !important;
+  font-size:25px !important;
+  line-height:1 !important;
+  z-index:1185 !important;
+  text-decoration:none !important;
+  -webkit-tap-highlight-color:transparent;
+}
+.vmq-gift-product::before{
+  content:"";
+  position:absolute;
+  inset:4px;
+  border-radius:50%;
+  border:1px solid rgba(139,107,34,.22);
+  pointer-events:none;
+}
+.vmq-gift-product:hover{
+  transform:translateY(-1px) !important;
+  box-shadow:0 7px 20px rgba(78,55,15,.26), inset 0 0 0 1px rgba(151,116,42,.18) !important;
+}
+@media(max-width:760px){
+  .vmq-gift-product{
+    right:14px !important;
+    bottom:124px !important;
+    width:50px !important;
+    height:50px !important;
+    font-size:23px !important;
+  }
+}
+@media(max-width:380px){
+  .vmq-gift-product{
+    right:12px !important;
+    bottom:120px !important;
+    width:48px !important;
+    height:48px !important;
+    font-size:22px !important;
+  }
+}
+@media(min-width:1200px){
+  .vmq-gift-product{
+    right:24px !important;
+    bottom:130px !important;
+  }
+}
+
+.vmq-gift-product span{
+  display:block;
+  filter:saturate(.78) contrast(1.03);
+  transform:translateY(-1px);
+}
+
+/* Final floating order: Book → Vaidyanatham Wellness Products → WhatsApp → Cart (lowest). */
+.floatingActions{flex-direction:column!important;}
+.floatingActions .floatingBook{order:1!important;}
+.floatingActions .floatingExplore{order:2!important;}
+.floatingActions .floatingWhatsApp{order:3!important;}
+.floatingActions .cart{order:4!important;}

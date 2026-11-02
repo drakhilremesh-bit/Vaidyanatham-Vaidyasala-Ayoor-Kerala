@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fbf8f1"/><stop offset="1" stop-color="#e9eef5"/></linearGradient></defs>
+<rect width="900" height="600" fill="url(#bg)"/><rect x="310" y="90" width="280" height="390" rx="28" fill="#fff" stroke="#c9a45c" stroke-width="5"/>
+<rect x="350" y="60" width="200" height="55" rx="12" fill="#123b73"/><text x="450" y="205" text-anchor="middle" font-family="Georgia,serif" font-size="32" fill="#123b73" font-weight="bold">VAIDYANATHAM</text>
+<path d="M450 235 C390 280 400 340 450 365 C500 340 510 280 450 235Z" fill="#c9a45c"/><text x="450" y="410" text-anchor="middle" font-family="Arial,sans-serif" font-size="25" fill="#123b73">Health Mix Lehya</text>
+<text x="450" y="445" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" fill="#667085">PRODUCT PHOTO TO BE ADDED</text></svg>

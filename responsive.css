@@ -1,0 +1,49 @@
+/* Extracted feature stylesheet. Main site loads css/main.css for the exact original cascade. */
+html,body{
+  max-width:100%;
+  overflow-x:hidden;
+}
+
+/* Prevent accidental horizontal overflow while preserving horizontal quick-nav scrolling. */
+  html,body{width:100%;max-width:100%;overflow-x:hidden}
+  body{min-width:0}
+  .wrap,.navPrimaryInner,.navSecondaryInner{min-width:0}
+  .navSecondaryInner{scrollbar-width:none}
+  .navSecondaryInner::-webkit-scrollbar{display:none}
+
+  /* Keep the secondary navigation clean and left-aligned on first load. */
+  @media(max-width:800px){
+    .navSecondaryInner{justify-content:flex-start;gap:0;padding-left:var(--gutter);padding-right:var(--gutter)}
+    .navSecondaryInner .navProductLink{margin-left:0}
+    .navSecondaryInner a,.navSecondaryInner button{flex:0 0 auto}
+  }
+
+  /* Hero: never let the visual card create a horizontal or vertical squeeze. */
+  .heroGrid>*{min-width:0}
+  .heroPortraitCard{max-width:100%;}
+  .heroPortrait{max-width:100%;height:auto;display:block}
+  @media(max-width:900px){
+    .hero{overflow:clip}
+    .heroGrid{width:100%;gap:28px}
+    .heroVisualFirst{width:100%;min-width:0}
+    .heroPortraitCard{width:min(100%,330px)}
+  }
+  @media(max-width:560px){
+    .hero{padding-top:38px;padding-bottom:48px}
+    .heroPortraitCard{width:min(100%,292px)}
+    .heroPortraitCaption{left:9px;right:9px;bottom:9px}
+    .heroPortraitCaption strong{font-size:15px;line-height:1.2}
+  }
+
+  /* Relax button: fixed to the right, but never allowed to cover page text. */
+  #vaidyanathamRelax{
+    top:clamp(96px,16vh,170px)!important;
+    right:max(12px,env(safe-area-inset-right))!important;
+    z-index:9996!important;
+  }
+  @media(max-width:600px){
+    #vaidyanathamRelax{top:clamp(96px,18vh,150px)!important;right:max(10px,env(safe-area-inset-right))!important}
+  }
+  @media(max-height:560px) and (orientation:landscape){
+    #vaidyanathamRelax{top:78px!important;width:50px!important;height:50px!important}
+  }

@@ -1,0 +1,171 @@
+/* Extracted feature stylesheet. Main site loads css/main.css for the exact original cascade. */
+/* Vaidyanatham Relax — compact, page-safe floating control */
+#vaidyanathamRelax{
+  position:fixed;
+  top:92px;
+  right:18px;
+  width:58px;
+  height:58px;
+  padding:0;
+  margin:0;
+  border:1px solid rgba(255,255,255,.85);
+  border-radius:50%;
+  background:rgba(120,183,153,.96);
+  color:#fff;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  cursor:pointer;
+  touch-action:none;
+  user-select:none;
+  -webkit-user-select:none;
+  z-index:95;
+  box-shadow:0 7px 22px rgba(47,91,70,.18);
+  overflow:hidden;
+  font-family:Inter,Arial,sans-serif;
+  transition:box-shadow .25s ease, background .25s ease;
+}
+#vaidyanathamRelax.idle{animation:vRelaxGlow 2.8s ease-in-out infinite}
+@keyframes vRelaxGlow{
+  0%,100%{box-shadow:0 7px 22px rgba(47,91,70,.18),0 0 0 0 rgba(120,183,153,0)}
+  50%{box-shadow:0 8px 25px rgba(47,91,70,.24),0 0 0 5px rgba(120,183,153,.09),0 0 16px rgba(120,183,153,.20)}
+}
+#vaidyanathamRelax .vr-brand{
+  width:48px;font-size:6.5px;font-weight:500;line-height:1.05;
+  white-space:normal;overflow-wrap:anywhere;
+}
+#vaidyanathamRelax .vr-word{
+  font-size:8px;font-weight:800;line-height:1;margin-top:3px;letter-spacing:.1px;
+}
+#vaidyanathamRelax .vr-number{
+  font-size:6.5px;font-weight:700;line-height:1;margin-top:3px;
+}
+#vaidyanathamRelax.breathing{
+  transition:none;
+  will-change:width,height,left,top;
+}
+#vaidyanathamRelax.breathing .vr-brand{display:none}
+#vaidyanathamRelax.breathing .vr-word{
+  font-size:clamp(9px,2.4vw,14px);letter-spacing:.1px;
+}
+#vaidyanathamRelax.breathing .vr-number{
+  font-size:clamp(16px,4vw,26px);margin-top:5px;font-weight:800;
+}
+#vaidyanathamRelax .vr-pointer{display:none}
+@media(max-width:600px){
+  #vaidyanathamRelax{top:84px;right:12px;width:56px;height:56px}
+}
+@media(prefers-reduced-motion:reduce){
+  #vaidyanathamRelax.idle{animation:none}
+}
+
+/* Relax button: directly below the top/header bar, never over the language control. */
+#vaidyanathamRelax{
+  top:78px !important;
+  right:16px !important;
+  left:auto !important;
+  bottom:auto !important;
+  z-index:1200 !important;
+}
+
+/* Floating Wellness Products shortcut: lower-right, directly above cart. */
+.vmq-floating-products{
+  position:fixed;
+  right:16px;
+  bottom:148px;
+  z-index:1190;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  max-width:190px;
+  padding:11px 16px;
+  border-radius:999px;
+  background:#1d4d86;
+  color:#fff;
+  text-decoration:none;
+  font-weight:800;
+  font-size:13px;
+  line-height:1.15;
+  text-align:center;
+  box-shadow:0 8px 24px rgba(15,45,80,.22);
+  border:2px solid rgba(255,255,255,.9);
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.vmq-floating-products:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 28px rgba(15,45,80,.28);
+}
+@media(max-width:760px){
+  #vaidyanathamRelax{
+    top:74px !important;
+    right:12px !important;
+  }
+  .vmq-floating-products{
+    right:12px;
+    bottom:142px;
+    max-width:165px;
+    min-height:44px;
+    padding:9px 13px;
+    font-size:12px;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .vmq-floating-products{transition:none}
+}
+
+/* Relax button: move away from the header and place it near the hero photo without clutter. */
+#vaidyanathamRelax{
+  top:365px !important;
+  right:22px !important;
+  left:auto !important;
+  bottom:auto !important;
+  z-index:1200 !important;
+}
+@media(max-width:760px){
+  #vaidyanathamRelax{
+    top:365px !important;
+    right:18px !important;
+  }
+}
+
+/* Relax starts below the secondary navigation, on the right, and can be
+     freely dragged anywhere on the viewport. */
+  #vaidyanathamRelax{
+    position:fixed!important;
+    left:var(--va-relax-left,auto)!important;
+    right:var(--va-relax-right,12px)!important;
+    top:var(--va-relax-top,120px)!important;
+    width:var(--va-relax-size,58px)!important;
+    height:var(--va-relax-size,58px)!important;
+    z-index:9999!important;
+    cursor:grab!important;
+    touch-action:none!important;
+    box-sizing:border-box!important;
+  }
+  #vaidyanathamRelax:active{cursor:grabbing!important}
+
+  /* Prevent normal page text from being selected/copied. Form controls stay usable. */
+  html.va-no-copy,
+  body.va-no-copy,
+  body.va-no-copy *{
+    -webkit-user-select:none!important;
+    user-select:none!important;
+    -webkit-touch-callout:none!important;
+  }
+  body.va-no-copy input,
+  body.va-no-copy textarea,
+  body.va-no-copy select,
+  body.va-no-copy [contenteditable="true"]{
+    -webkit-user-select:text!important;
+    user-select:text!important;
+    -webkit-touch-callout:default!important;
+  }
+  body.va-no-copy img,
+  body.va-no-copy a,
+  body.va-no-copy button{
+    -webkit-user-drag:none!important;
+    user-drag:none!important;
+  }

@@ -1,0 +1,20 @@
+/* Extracted feature stylesheet. Main site loads css/main.css for the exact original cascade. */
+/* Final requested refinements only */
+.heroBtns .btn.primary.is-active{box-shadow:0 10px 28px rgba(18,59,115,.22);transform:translateY(-1px)}
+.presentingComplaintLabel{position:relative;display:block}
+.presentingComplaintLabel textarea{width:100%;min-height:145px;resize:vertical;padding:18px 18px 30px;border:1px solid #d7dce3;border-radius:16px;background:#fff;color:#18263b;font:inherit;line-height:1.55;box-sizing:border-box}
+.presentingComplaintLabel textarea:focus{outline:2px solid rgba(184,147,82,.28);outline-offset:2px;border-color:#b89352}
+.charCounter{display:block;text-align:right;margin-top:-27px;margin-right:14px;margin-bottom:12px;color:#7b8491;font-size:11px;pointer-events:none}
+.consultQrArea{display:flex;align-items:center;gap:16px;margin:12px 0 20px;padding:16px;border:1px solid rgba(184,147,82,.32);border-radius:16px;background:#fffdf7}
+.consultQrPlaceholder{width:82px;height:82px;flex:0 0 82px;border:2px dashed #b89352;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#b89352;background:#fff}
+.consultQrPlaceholder span{font-size:23px;font-weight:900;letter-spacing:1px}.consultQrPlaceholder small{font-size:7px;letter-spacing:1px}
+.consultQrArea b{color:#173f72;font-size:16px}.consultQrArea p{margin:4px 0 0;color:#687383;font-size:12px;line-height:1.45}
+#vaLoadingScreen{position:fixed;inset:0;z-index:2147483647;display:grid;place-items:center;background:#fff;color:#173f72;opacity:1;visibility:visible;transition:opacity .38s ease,visibility .38s ease}
+#vaLoadingScreen.is-hidden{opacity:0;visibility:hidden;pointer-events:none}
+.vaLoadingInner{text-align:center;padding:24px;max-width:90vw}
+.vaLoadingTitle{font-family:Georgia,'Times New Roman',serif;font-size:clamp(30px,8vw,54px);font-weight:700;letter-spacing:.14em;line-height:1.05}
+.vaLoadingLegacy{margin-top:12px;font-size:clamp(11px,2.8vw,16px);letter-spacing:.035em;color:#7c8794}
+.vaLoadingYear{margin-top:6px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#b89352}
+body.page-loading{overflow:hidden}
+@media(max-width:600px){.consultQrArea{align-items:flex-start}.consultQrPlaceholder{width:72px;height:72px;flex-basis:72px}.presentingComplaintLabel textarea{min-height:130px}}
+@media(prefers-reduced-motion:reduce){#vaLoadingScreen{transition:none}.heroBtns .btn.primary.is-active{transform:none}}

@@ -1,0 +1,96 @@
+/* Extracted feature stylesheet. Main site loads css/main.css for the exact original cascade. */
+.vaLoadingInner{
+  width:min(92vw,760px);
+  margin:0 auto;
+  display:flex !important;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center !important;
+}
+.vaLoadingTitle{
+  text-align:center !important;
+}
+.vaLoadingYear{
+  margin-top:9px;
+  text-align:center !important;
+  font-size:clamp(11px,2.6vw,15px) !important;
+  letter-spacing:.08em;
+  font-weight:500;
+}
+
+.vaLoadingOverlay{
+  will-change:opacity;
+  transition:opacity .55s cubic-bezier(.22,1,.36,1) !important;
+}
+.vaLoadingInner{
+  will-change:opacity,transform;
+  animation:vaNaturalLoadingIn .7s cubic-bezier(.22,1,.36,1) both;
+}
+@keyframes vaNaturalLoadingIn{
+  from{opacity:0;transform:translateY(5px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@media(prefers-reduced-motion:reduce){
+  .vaLoadingOverlay{transition:none !important}
+  .vaLoadingInner{animation:none !important}
+}
+
+html{
+    scroll-behavior:smooth;
+    scroll-padding-top:104px;
+    scrollbar-gutter:stable;
+    overflow-x:hidden;
+    overflow-y:auto;
+    overscroll-behavior-x:none;
+    overflow-anchor:auto;
+  }
+  body{
+    overflow-x:hidden;
+    overflow-y:visible;
+    overscroll-behavior-x:none;
+    overflow-anchor:auto;
+    -webkit-overflow-scrolling:touch;
+    text-rendering:optimizeLegibility;
+  }
+
+  /* Quiet first paint: prevents a flash while the landing structure is parsed. */
+  html.va-preload body{
+    opacity:0;
+  }
+  body{
+    opacity:1;
+    transition:opacity .46s cubic-bezier(.22,1,.36,1);
+  }
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    html.va-preload body{opacity:1}
+    body{transition:none}
+  }
+
+  /* Premium, unobtrusive desktop scrollbar; native touch scrolling is untouched. */
+  @media(pointer:fine){
+    html{scrollbar-width:thin;scrollbar-color:rgba(18,59,115,.28) transparent}
+    html::-webkit-scrollbar{width:9px}
+    html::-webkit-scrollbar-track{background:transparent}
+    html::-webkit-scrollbar-thumb{
+      background:linear-gradient(180deg,rgba(18,59,115,.34),rgba(179,138,69,.34));
+      border-radius:999px;
+      border:2px solid transparent;
+      background-clip:padding-box;
+    }
+    html::-webkit-scrollbar-thumb:hover{
+      background:linear-gradient(180deg,rgba(18,59,115,.50),rgba(179,138,69,.50));
+      background-clip:padding-box;
+    }
+  }
+
+  /* Keep internal horizontal navigation smooth without hijacking page scroll. */
+  .navSecondaryInner{
+    scroll-behavior:smooth;
+    overscroll-behavior-x:contain;
+  }
+  .mobileMenu,.chatBody,.cartDrawerBody{
+    -webkit-overflow-scrolling:touch;
+    overscroll-behavior:contain;
+  }
